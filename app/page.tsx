@@ -424,9 +424,9 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Hospitality Business Program */}
             <div className="bg-section-bg rounded-xl overflow-hidden">
-              <div className="relative h-56 lg:h-72">
+              <div className="relative h-72 lg:h-96">
                 <Image
-                  src="https://imagesplashh.vercel.app/api/image/600/400/Hospitality+Business"
+                  src="/prog1.png"
                   alt="Hospitality Business Program"
                   fill
                   className="object-cover"
@@ -477,9 +477,9 @@ export default function Home() {
 
             {/* Culinary Arts Program */}
             <div className="bg-section-bg rounded-xl overflow-hidden">
-              <div className="relative h-56 lg:h-72">
+              <div className="relative h-72 lg:h-96">
                 <Image
-                  src="https://imagesplashh.vercel.app/api/image/600/400/Culinary+Arts"
+                  src="/prog2.png"
                   alt="Culinary Arts Program"
                   fill
                   className="object-cover"
@@ -612,13 +612,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative h-80 lg:h-[500px] rounded-lg overflow-hidden">
-            <Image
-              src="https://imagesplashh.vercel.app/api/image/1200/600/Dubai+Skyline"
-              alt="Dubai"
-              fill
-              className="object-cover"
-            />
+          <div className="relative h-96 lg:h-[32rem] rounded-lg overflow-hidden">
+            <Image src="/dubai.png" alt="Dubai" fill className="object-cover" />
           </div>
         </div>
       </section>
@@ -646,7 +641,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
               <div className="relative h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="https://imagesplashh.vercel.app/api/image/800/600/Global+Careers"
+                  src="/1.png"
                   alt="Global Career Opportunities"
                   fill
                   className="object-cover"
@@ -687,7 +682,7 @@ export default function Home() {
               </div>
               <div className="relative h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden shadow-lg order-1 lg:order-2">
                 <Image
-                  src="https://imagesplashh.vercel.app/api/image/800/600/Transferable+Skills"
+                  src="/2.png"
                   alt="Transferable Skills"
                   fill
                   className="object-cover"
@@ -699,7 +694,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
               <div className="relative h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="https://imagesplashh.vercel.app/api/image/800/600/Entrepreneurship"
+                  src="/3.png"
                   alt="Entrepreneurship Opportunities"
                   fill
                   className="object-cover"
