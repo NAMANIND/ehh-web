@@ -2,6 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Facebook,
+  Linkedin,
+  Instagram,
+  Youtube,
+} from "lucide-react";
 
 const heroSlides = [
   {
@@ -99,14 +108,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary-red rounded"></div>
-              <span
-                className={`text-lg sm:text-xl font-semibold transition-colors duration-300 ${
-                  isOverHero ? "text-white" : "text-text-primary"
-                }`}
-              >
-                EHH
-              </span>
+              <div className="relative min-w-48 h-8 md:h-10">
+                <Image
+                  src="/main-logo-new.png"
+                  alt="EHH Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
 
             {/* Desktop Navigation */}
@@ -837,19 +846,74 @@ export default function Home() {
         id="contact"
         className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-primary-red"
       >
-        <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-            Contact Our Team Today!
-          </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed px-4 sm:px-0">
-            EHH graduates stand out because they have what the industry values
-            most: hands-on experience, professionalism, and global readiness.
-          </p>
-          <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-white italic px-4 sm:px-0">
-            "Your global hospitality career starts here! Connect with us if
-            you're serious about excelling in the service sector, creating your
-            own business, or exploring international opportunities."
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center space-y-6 sm:space-y-8 mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+              Contact Our Team Today!
+            </h2>
+            <p className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed px-4 sm:px-0">
+              EHH graduates stand out because they have what the industry values
+              most: hands-on experience, professionalism, and global readiness.
+            </p>
+            <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-white italic px-4 sm:px-0">
+              "Your global hospitality career starts here! Connect with us if
+              you're serious about excelling in the service sector, creating
+              your own business, or exploring international opportunities."
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">ADDRESS</h3>
+              <div className="text-white/90 text-sm sm:text-base space-y-1">
+                <p>Ecole Hôtelière Helvétique</p>
+                <p>Dubai International Academic City</p>
+                <p>P.O.Box 345025</p>
+                <p>Dubai - United Arab Emirates</p>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">PHONE</h3>
+              <div className="text-white/90 text-sm sm:text-base space-y-2">
+                <p>
+                  <a
+                    href="tel:+97145646772"
+                    className="hover:text-white transition-colors font-semibold"
+                  >
+                    +971 4 5646 772
+                  </a>
+                </p>
+                <p>
+                  <span className="font-semibold">Email:</span>{" "}
+                  <a
+                    href="mailto:info@swissec.com"
+                    className="hover:text-white transition-colors"
+                  >
+                    info@swissec.com
+                  </a>
+                </p>
+                <p>
+                  <span className="font-semibold">WhatsApp:</span>{" "}
+                  <a
+                    href="https://wa.me/971501016067"
+                    className="hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +971 50 101 6067
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
             <button className="bg-white text-primary-red px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-gray-100 transition-colors font-semibold text-base sm:text-lg">
               Get Started
@@ -867,8 +931,14 @@ export default function Home() {
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-3 sm:mb-4">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary-red rounded"></div>
-                <span className="text-lg sm:text-xl font-semibold">EHH</span>
+                <div className="relative min-w-48 h-8 md:h-10">
+                  <Image
+                    src="/main-logo-new.png"
+                    alt="EHH Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
               <p className="text-sm sm:text-base text-gray-400">
                 Ecole Hôtelière Helvétique - Shaping Tomorrow's Global
@@ -876,55 +946,40 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
-                Quick Links
+              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 flex items-center">
+                <span className="w-8 h-8 bg-primary-red rounded-full flex items-center justify-center mr-2">
+                  <MapPin className="w-4 h-4 text-white" />
+                </span>
+                <span>ADDRESS</span>
               </h4>
-              <ul className="space-y-2 text-sm sm:text-base text-gray-400">
-                <li>
-                  <button
-                    onClick={() => scrollToSection("about")}
-                    className="hover:text-white transition-colors"
-                  >
-                    About
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection("programs")}
-                    className="hover:text-white transition-colors"
-                  >
-                    Programs
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection("why-dubai")}
-                    className="hover:text-white transition-colors"
-                  >
-                    Why Dubai
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
-                Contact
-              </h4>
-              <div className="space-y-2 text-sm sm:text-base text-gray-400">
-                <p>Dubai, UAE</p>
-                <p>In Association with MAF Accor Hotels and Resorts</p>
+              <div className="space-y-1 text-sm sm:text-base text-gray-400">
+                <p>Ecole Hôtelière Helvétique</p>
+                <p>Dubai International Academic City</p>
+                <p>P.O.Box 345025</p>
+                <p>Dubai - United Arab Emirates</p>
               </div>
             </div>
             <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
-                Get In Touch
+              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 flex items-center">
+                <span className="w-8 h-8 bg-primary-red rounded-full flex items-center justify-center mr-2">
+                  <Phone className="w-4 h-4 text-white" />
+                </span>
+                <span>PHONE</span>
               </h4>
               <div className="space-y-2 text-sm sm:text-base text-gray-400">
                 <p>
+                  <a
+                    href="tel:+97145646772"
+                    className="hover:text-white transition-colors"
+                  >
+                    +971 4 5646 772
+                  </a>
+                </p>
+                <p className="pt-2">
                   <span className="font-semibold text-white">Email:</span>{" "}
                   <a
                     href="mailto:info@swissec.com"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="hover:text-white transition-colors"
                   >
                     info@swissec.com
                   </a>
@@ -933,25 +988,65 @@ export default function Home() {
                   <span className="font-semibold text-white">WhatsApp:</span>{" "}
                   <a
                     href="https://wa.me/971501016067"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="hover:text-white transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     +971 50 101 6067
                   </a>
                 </p>
-                <p>
-                  <span className="font-semibold text-white">Website:</span>{" "}
+              </div>
+            </div>
+            <div>
+              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
+                CONNECT US
+              </h4>
+              <ul className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap w-fit">
+                <li>
                   <a
-                    href="https://www.ehheducation.com"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    href="https://www.facebook.com/ecolehotelierehelvetique/?ref=page_internal"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full hover:bg-white/10"
+                    aria-label="Facebook"
                   >
-                    www.ehheducation.com
+                    <Facebook className="w-5 h-5 sm:w-6 sm:h-6" />
                   </a>
-                </p>
-              </div>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/ecole-hoteliere-helvetique/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full hover:bg-white/10"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/ehheducation/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full hover:bg-white/10"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/channel/UC_60J4DAFPrzJ3QczG5cOOg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full hover:bg-white/10"
+                    aria-label="YouTube"
+                  >
+                    <Youtube className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
           <div className="border-t border-gray-700 pt-6 sm:pt-8 text-center text-sm sm:text-base text-gray-400">
