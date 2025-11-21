@@ -10,6 +10,14 @@ import {
   Linkedin,
   Instagram,
   Youtube,
+  Globe,
+  Briefcase,
+  Shield,
+  Zap,
+  GraduationCap,
+  Building2,
+  Route,
+  Plane,
 } from "lucide-react";
 
 const heroSlides = [
@@ -45,7 +53,7 @@ const navItems = [
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isOverHero, setIsOverHero] = useState(true);
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -53,7 +61,6 @@ export default function Home() {
       const scrollY = window.scrollY;
       const heroHeight = window.innerHeight;
       setIsScrolled(scrollY > 50);
-      setIsOverHero(scrollY < heroHeight - 100);
     };
     window.addEventListener("scroll", handleScroll);
     handleScroll();
@@ -126,14 +133,10 @@ export default function Home() {
                   onClick={() => scrollToSection(item.sectionId)}
                   className={`transition-colors font-medium ${
                     item.isCTA
-                      ? `px-6 py-2 rounded-md ${
-                          isOverHero
-                            ? "bg-white text-primary-red hover:bg-white/90"
-                            : "bg-primary-red text-white hover:bg-primary-red-dark"
-                        }`
-                      : isOverHero
-                      ? "text-white/90 hover:text-white"
-                      : "text-text-secondary hover:text-primary-red"
+                      ? `px-6 py-2 rounded-md bg-primary-red text-white hover:bg-primary-red-dark`
+                      : isScrolled
+                      ? "text-text-secondary hover:text-primary-red"
+                      : "text-white/90 hover:text-primary-red"
                   }`}
                 >
                   {item.label}
@@ -145,9 +148,9 @@ export default function Home() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`md:hidden p-2 rounded-md transition-colors ${
-                isOverHero && !isScrolled
-                  ? "text-white hover:bg-white/10"
-                  : "text-text-primary hover:bg-gray-100"
+                isScrolled
+                  ? "text-text-primary hover:bg-gray-100"
+                  : "text-white hover:bg-white/10"
               }`}
               aria-label="Toggle menu"
             >
@@ -270,16 +273,6 @@ export default function Home() {
             />
           ))}
         </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 hidden lg:block">
-          <div className="flex flex-col items-center space-y-2 text-white/70">
-            <span className="text-xs sm:text-sm font-medium">Scroll</span>
-            <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-1.5 sm:p-2">
-              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white/70 rounded-full animate-bounce"></div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* About EHH */}
@@ -329,12 +322,10 @@ export default function Home() {
           <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             {/* Blended Learning */}
             <div className="bg-white p-6 sm:p-8 rounded-lg shadow-sm space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center">
-                <span className="text-white text-xl sm:text-2xl font-bold">
-                  1
-                </span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center mx-auto">
+                <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
+              <h3 className="text-xl sm:text-2xl font-bold text-text-primary text-center">
                 Blended Learning Excellence
               </h3>
               <p className="text-text-secondary leading-relaxed">
@@ -364,12 +355,10 @@ export default function Home() {
 
             {/* Real-World Experience */}
             <div className="bg-white p-6 sm:p-8 rounded-lg shadow-sm space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center">
-                <span className="text-white text-xl sm:text-2xl font-bold">
-                  2
-                </span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center mx-auto">
+                <Building2 className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
+              <h3 className="text-xl sm:text-2xl font-bold text-text-primary text-center">
                 Real-World Experience From Day One
               </h3>
               <p className="text-text-secondary leading-relaxed">
@@ -386,12 +375,10 @@ export default function Home() {
 
             {/* Dual Pathways */}
             <div className="bg-white p-6 sm:p-8 rounded-lg shadow-sm space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center">
-                <span className="text-white text-xl sm:text-2xl font-bold">
-                  3
-                </span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center mx-auto">
+                <Route className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
+              <h3 className="text-xl sm:text-2xl font-bold text-text-primary text-center">
                 Dual Pathways: Hospitality Business & Culinary Arts
               </h3>
               <p className="text-text-secondary leading-relaxed">
@@ -403,12 +390,10 @@ export default function Home() {
 
             {/* Progression to Europe */}
             <div className="bg-white p-6 sm:p-8 rounded-lg shadow-sm space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center">
-                <span className="text-white text-xl sm:text-2xl font-bold">
-                  4
-                </span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center mx-auto">
+                <Plane className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
+              <h3 className="text-xl sm:text-2xl font-bold text-text-primary text-center">
                 Progression to Europe – Specialization Opportunities
               </h3>
               <p className="text-text-secondary leading-relaxed">
@@ -426,20 +411,20 @@ export default function Home() {
       {/* Programs Section */}
       <section
         id="programs"
-        className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white"
+        className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-12 lg:mb-16">
+          <div className="text-center space-y-4 mb-16 lg:mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
               Our Programs
             </h2>
-            <div className="w-20 sm:w-24 h-1 bg-primary-red mx-auto"></div>
+            <div className="w-24 h-1 bg-primary-red mx-auto"></div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Hospitality Business Program */}
-            <div className="space-y-4 sm:space-y-6">
-              <div className="relative h-48 sm:h-56 lg:h-64 rounded-lg overflow-hidden shadow-lg">
+            <div className="bg-section-bg rounded-xl overflow-hidden">
+              <div className="relative h-56 lg:h-72">
                 <Image
                   src="https://imagesplashh.vercel.app/api/image/600/400/Hospitality+Business"
                   alt="Hospitality Business Program"
@@ -447,56 +432,52 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="space-y-3 sm:space-y-4">
-                <h3 className="text-2xl sm:text-3xl font-bold text-text-primary">
+              <div className="p-8 lg:p-10">
+                <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-6">
                   Hospitality Business Program
                 </h3>
-                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-text-secondary">
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Front Office</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Guest Relations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>F&B Service</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Hotel Operations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Hospitality Leadership Foundations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Guest Accounting</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Auditing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Entrepreneurship/Business Studies</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>
-                      Integrated Project: Hospitality Business Project
-                    </span>
-                  </li>
-                </ul>
+                <div className="flex flex-row gap-3">
+                  <div className="space-y-3">
+                    {[
+                      "Front Office",
+                      "Guest Relations",
+                      "F&B Service",
+                      "Hotel Operations",
+                      "Hospitality Leadership Foundations",
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start gap-3 text-text-secondary"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary-red mt-2 shrink-0"></div>
+                        <span className="text-sm sm:text-base">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-3">
+                    {[
+                      "Guest Accounting",
+                      "Auditing",
+                      "Entrepreneurship/Business Studies",
+                      "Integrated Project: Hospitality Business Project",
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start gap-3 text-text-secondary"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary-red mt-2 shrink-0"></div>
+                        <span className="text-sm sm:text-base">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Culinary Arts Program */}
-            <div className="space-y-4 sm:space-y-6">
-              <div className="relative h-48 sm:h-56 lg:h-64 rounded-lg overflow-hidden shadow-lg">
+            <div className="bg-section-bg rounded-xl overflow-hidden">
+              <div className="relative h-56 lg:h-72">
                 <Image
                   src="https://imagesplashh.vercel.app/api/image/600/400/Culinary+Arts"
                   alt="Culinary Arts Program"
@@ -504,48 +485,45 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="space-y-3 sm:space-y-4">
-                <h3 className="text-2xl sm:text-3xl font-bold text-text-primary">
+              <div className="p-8 lg:p-10">
+                <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-6">
                   Culinary Arts Program
                 </h3>
-                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-text-secondary">
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Culinary Fundamentals</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Classical Cooking</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Baking and Pastry</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Hot & Cold Kitchen</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Menu Planning and Costing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Food Safety and Hygiene</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Professional Chef Development</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Entrepreneurship/Business Studies</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-red mr-3 mt-1">•</span>
-                    <span>Integrated Project: Culinary Business Project</span>
-                  </li>
-                </ul>
+                <div className="flex flex-row gap-3">
+                  <div className="space-y-3">
+                    {[
+                      "Culinary Fundamentals",
+                      "Classical Cooking",
+                      "Baking and Pastry",
+                      "Hot & Cold Kitchen",
+                      "Menu Planning and Costing",
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start gap-3 text-text-secondary"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary-red mt-2 shrink-0"></div>
+                        <span className="text-sm sm:text-base">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="space-y-3">
+                    {[
+                      "Food Safety and Hygiene",
+                      "Professional Chef Development",
+                      "Entrepreneurship/Business Studies",
+                      "Integrated Project: Culinary Business Project",
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start gap-3 text-text-secondary"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary-red mt-2 shrink-0"></div>
+                        <span className="text-sm sm:text-base">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -555,61 +533,86 @@ export default function Home() {
       {/* Why Dubai */}
       <section
         id="why-dubai"
-        className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-section-bg"
+        className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-section-bg"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary px-4 sm:px-0">
-              Why Choose Dubai as Your Study–Work–Live Destination?
+          <div className="text-center space-y-4 mb-16 lg:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
+              Why Choose Dubai?
             </h2>
-            <div className="w-20 sm:w-24 h-1 bg-primary-red mx-auto"></div>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+              Your Study–Work–Live Destination
+            </p>
+            <div className="w-24 h-1 bg-primary-red mx-auto"></div>
           </div>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-10 lg:mb-12">
-            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm text-center space-y-3 sm:space-y-4">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-red">
-                A Global Tourism Capital
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-12 lg:mb-16">
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 w-12 h-12 bg-primary-red rounded-lg flex items-center justify-center">
+                  <Globe className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-text-primary mb-2">
+                    Global Tourism Capital
+                  </h3>
+                  <p className="text-text-secondary">
+                    Millions of visitors annually, hundreds of luxury hotels,
+                    and award-winning restaurants.
+                  </p>
+                </div>
               </div>
-              <p className="text-sm sm:text-base text-text-secondary">
-                Dubai welcomes millions of visitors annually and is home to
-                hundreds of luxury hotels, award-winning restaurants, and global
-                hospitality brands.
-              </p>
+
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 w-12 h-12 bg-primary-red rounded-lg flex items-center justify-center">
+                  <Briefcase className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-text-primary mb-2">
+                    Career Opportunities
+                  </h3>
+                  <p className="text-text-secondary">
+                    5-star hotels, international brands, world-class
+                    restaurants, and startup opportunities.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm text-center space-y-3 sm:space-y-4">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-red">
-                Career Opportunities Everywhere
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 w-12 h-12 bg-primary-red rounded-lg flex items-center justify-center">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-text-primary mb-2">
+                    Safe & Multicultural
+                  </h3>
+                  <p className="text-text-secondary">
+                    Over 200 nationalities in one of the world's safest and most
+                    international cities.
+                  </p>
+                </div>
               </div>
-              <p className="text-sm sm:text-base text-text-secondary">
-                5-star hotels, international brands, world-class restaurants,
-                mega events, tourism companies, and startup opportunities.
-              </p>
-            </div>
 
-            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm text-center space-y-3 sm:space-y-4">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-red">
-                Safe, Modern, and Multicultural
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 w-12 h-12 bg-primary-red rounded-lg flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-text-primary mb-2">
+                    Future-Ready Lifestyle
+                  </h3>
+                  <p className="text-text-secondary">
+                    High-tech infrastructure, excellent quality of life, and a
+                    fast-growing professional landscape.
+                  </p>
+                </div>
               </div>
-              <p className="text-sm sm:text-base text-text-secondary">
-                With over 200 nationalities, Dubai is one of the safest and most
-                international cities in the world.
-              </p>
-            </div>
-
-            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm text-center space-y-3 sm:space-y-4">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-red">
-                Future-Ready Lifestyle
-              </div>
-              <p className="text-sm sm:text-base text-text-secondary">
-                Safe and secured city, high-tech infrastructure, excellent
-                quality of life, competitive work opportunities, and a
-                fast-growing professional landscape.
-              </p>
             </div>
           </div>
 
-          <div className="relative h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden shadow-xl">
+          <div className="relative h-80 lg:h-[500px] rounded-lg overflow-hidden">
             <Image
               src="https://imagesplashh.vercel.app/api/image/1200/600/Dubai+Skyline"
               alt="Dubai"
@@ -788,11 +791,10 @@ export default function Home() {
               {/* Director Image and Name */}
               <div className="space-y-6 order-first lg:order-last">
                 <div className="relative w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-lg bg-gray-100">
-                  <Image
-                    src="https://imagesplashh.vercel.app/api/image/600/800/ceo"
+                  <img
+                    src="./director.jpeg"
                     alt="Valeriya Krupenya - Director"
-                    fill
-                    className="object-cover"
+                    className="w-full"
                   />
                 </div>
                 <div className="text-center lg:text-left">
@@ -912,15 +914,6 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
-            <button className="bg-white text-primary-red px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-gray-100 transition-colors font-semibold text-base sm:text-lg">
-              Get Started
-            </button>
-            <button className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-white/10 transition-colors font-semibold text-base sm:text-lg">
-              Request Information
-            </button>
           </div>
         </div>
       </section>
