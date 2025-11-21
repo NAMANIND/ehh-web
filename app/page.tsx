@@ -99,10 +99,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[var(--primary-red)] rounded"></div>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary-red rounded"></div>
               <span
                 className={`text-lg sm:text-xl font-semibold transition-colors duration-300 ${
-                  isOverHero ? "text-white" : "text-[var(--text-primary)]"
+                  isOverHero ? "text-white" : "text-text-primary"
                 }`}
               >
                 EHH
@@ -119,12 +119,12 @@ export default function Home() {
                     item.isCTA
                       ? `px-6 py-2 rounded-md ${
                           isOverHero
-                            ? "bg-white text-[var(--primary-red)] hover:bg-white/90"
-                            : "bg-[var(--primary-red)] text-white hover:bg-[var(--primary-red-dark)]"
+                            ? "bg-white text-primary-red hover:bg-white/90"
+                            : "bg-primary-red text-white hover:bg-primary-red-dark"
                         }`
                       : isOverHero
                       ? "text-white/90 hover:text-white"
-                      : "text-[var(--text-secondary)] hover:text-[var(--primary-red)]"
+                      : "text-text-secondary hover:text-primary-red"
                   }`}
                 >
                   {item.label}
@@ -138,7 +138,7 @@ export default function Home() {
               className={`md:hidden p-2 rounded-md transition-colors ${
                 isOverHero && !isScrolled
                   ? "text-white hover:bg-white/10"
-                  : "text-[var(--text-primary)] hover:bg-gray-100"
+                  : "text-text-primary hover:bg-gray-100"
               }`}
               aria-label="Toggle menu"
             >
@@ -175,8 +175,8 @@ export default function Home() {
                   onClick={() => scrollToSection(item.sectionId)}
                   className={`w-full text-left px-4 py-3 rounded-md transition-colors font-medium ${
                     item.isCTA
-                      ? "bg-[var(--primary-red)] text-white hover:bg-[var(--primary-red-dark)]"
-                      : "text-[var(--text-secondary)] hover:bg-gray-100 hover:text-[var(--primary-red)]"
+                      ? "bg-primary-red text-white hover:bg-primary-red-dark"
+                      : "text-text-secondary hover:bg-gray-100 hover:text-primary-red"
                   }`}
                 >
                   {item.label}
@@ -222,7 +222,7 @@ export default function Home() {
                 </h1>
                 <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 leading-relaxed drop-shadow-md px-4 sm:px-0">
                   Starting Today in Association with{" "}
-                  <span className="text-[var(--primary-red-light)] font-semibold">
+                  <span className="text-primary-red-light font-semibold">
                     MAF Accor Hotels and Resorts
                   </span>{" "}
                   – Dubai UAE
@@ -231,13 +231,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-4 sm:px-0">
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="bg-[var(--primary-red)] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-[var(--primary-red-dark)] transition-colors font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="bg-primary-red text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-primary-red-dark transition-colors font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   Start Your Journey
                 </button>
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-white hover:text-[var(--primary-red)] transition-colors font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-white hover:text-primary-red transition-colors font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   Learn More
                 </button>
@@ -254,7 +254,7 @@ export default function Home() {
               onClick={() => setCurrentSlide(index)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentSlide
-                  ? "w-6 sm:w-8 bg-[var(--primary-red)]"
+                  ? "w-6 sm:w-8 bg-primary-red"
                   : "w-2 bg-white/50 hover:bg-white/75"
               }`}
               aria-label={`Go to slide ${index + 1}`}
@@ -280,20 +280,20 @@ export default function Home() {
       >
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
           <div className="text-center space-y-3 sm:space-y-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
               About EHH
             </h2>
-            <div className="w-20 sm:w-24 h-1 bg-[var(--primary-red)] mx-auto"></div>
+            <div className="w-20 sm:w-24 h-1 bg-primary-red mx-auto"></div>
           </div>
-          <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+          <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-text-secondary leading-relaxed">
             <p>
-              <span className="font-semibold text-[var(--text-primary)]">
+              <span className="font-semibold text-text-primary">
                 Ecole Hôtelière Helvétique (EHH)
               </span>{" "}
               is a Swiss-inspired hospitality and culinary academy dedicated to
               developing future-ready professionals for the global tourism and
               service industry. Our approach is simple:{" "}
-              <span className="font-semibold text-[var(--primary-red)]">
+              <span className="font-semibold text-primary-red">
                 Real learning happens in the Real World.
               </span>
             </p>
@@ -308,50 +308,46 @@ export default function Home() {
       </section>
 
       {/* What Makes Us Unique */}
-      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[var(--section-bg)]">
+      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-section-bg">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
               What Makes Us Unique
             </h2>
-            <div className="w-20 sm:w-24 h-1 bg-[var(--primary-red)] mx-auto"></div>
+            <div className="w-20 sm:w-24 h-1 bg-primary-red mx-auto"></div>
           </div>
 
           <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             {/* Blended Learning */}
             <div className="bg-white p-6 sm:p-8 rounded-lg shadow-sm space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[var(--primary-red)] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center">
                 <span className="text-white text-xl sm:text-2xl font-bold">
                   1
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
+              <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
                 Blended Learning Excellence
               </h3>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-text-secondary leading-relaxed">
                 Our programs combine the best of two worlds:
               </p>
-              <ul className="space-y-2 text-[var(--text-secondary)]">
+              <ul className="space-y-2 text-text-secondary">
                 <li className="flex items-start">
-                  <span className="text-[var(--primary-red)] mr-2 font-bold">
-                    30%
-                  </span>
+                  <span className="text-primary-red mr-2 font-bold">30%</span>
                   <span>
                     Academic Theory – built on strong academic foundations and
                     industry standards.
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-[var(--primary-red)] mr-2 font-bold">
-                    70%
-                  </span>
+                  <span className="text-primary-red mr-2 font-bold">70%</span>
                   <span>
                     Practical Training – real-life experience in hotels,
                     kitchens, restaurants, and frontline operations.
                   </span>
                 </li>
               </ul>
-              <p className="text-[var(--text-secondary)] italic">
+              <p className="text-text-secondary italic">
                 This balanced approach ensures students do not just learn
                 hospitality — they live it from DAY 1.
               </p>
@@ -359,21 +355,21 @@ export default function Home() {
 
             {/* Real-World Experience */}
             <div className="bg-white p-6 sm:p-8 rounded-lg shadow-sm space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[var(--primary-red)] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center">
                 <span className="text-white text-xl sm:text-2xl font-bold">
                   2
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
+              <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
                 Real-World Experience From Day One
               </h3>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-text-secondary leading-relaxed">
                 At EHH, students enter the real hospitality environment from
                 their very first day. They train, work, and grow inside actual
                 hotels and culinary operations, gaining industry exposure that
                 traditional programs only offer after graduation or in a
                 simulated environment. Our students evolve in the{" "}
-                <span className="font-semibold text-[var(--primary-red)]">
+                <span className="font-semibold text-primary-red">
                   REAL business world.
                 </span>
               </p>
@@ -381,15 +377,15 @@ export default function Home() {
 
             {/* Dual Pathways */}
             <div className="bg-white p-6 sm:p-8 rounded-lg shadow-sm space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[var(--primary-red)] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center">
                 <span className="text-white text-xl sm:text-2xl font-bold">
                   3
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
+              <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
                 Dual Pathways: Hospitality Business & Culinary Arts
               </h3>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-text-secondary leading-relaxed">
                 We offer two core professional programs designed to prepare
                 students for international career opportunities right after
                 completion.
@@ -398,15 +394,15 @@ export default function Home() {
 
             {/* Progression to Europe */}
             <div className="bg-white p-6 sm:p-8 rounded-lg shadow-sm space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[var(--primary-red)] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-red rounded-lg flex items-center justify-center">
                 <span className="text-white text-xl sm:text-2xl font-bold">
                   4
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
+              <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
                 Progression to Europe – Specialization Opportunities
               </h3>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-text-secondary leading-relaxed">
                 Students have the opportunity to continue their studies or
                 specialize in Europe, including partnerships with leading
                 institutions in Switzerland, France, Italy, and Hungary. These
@@ -425,10 +421,10 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
               Our Programs
             </h2>
-            <div className="w-20 sm:w-24 h-1 bg-[var(--primary-red)] mx-auto"></div>
+            <div className="w-20 sm:w-24 h-1 bg-primary-red mx-auto"></div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
@@ -443,62 +439,44 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-3 sm:space-y-4">
-                <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
+                <h3 className="text-2xl sm:text-3xl font-bold text-text-primary">
                   Hospitality Business Program
                 </h3>
-                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-[var(--text-secondary)]">
+                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-text-secondary">
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Front Office</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Guest Relations</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>F&B Service</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Hotel Operations</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Hospitality Leadership Foundations</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Guest Accounting</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Auditing</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Entrepreneurship/Business Studies</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>
                       Integrated Project: Hospitality Business Project
                     </span>
@@ -518,62 +496,44 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-3 sm:space-y-4">
-                <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
+                <h3 className="text-2xl sm:text-3xl font-bold text-text-primary">
                   Culinary Arts Program
                 </h3>
-                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-[var(--text-secondary)]">
+                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-text-secondary">
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Culinary Fundamentals</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Classical Cooking</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Baking and Pastry</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Hot & Cold Kitchen</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Menu Planning and Costing</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Food Safety and Hygiene</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Professional Chef Development</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Entrepreneurship/Business Studies</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[var(--primary-red)] mr-3 mt-1">
-                      •
-                    </span>
+                    <span className="text-primary-red mr-3 mt-1">•</span>
                     <span>Integrated Project: Culinary Business Project</span>
                   </li>
                 </ul>
@@ -586,22 +546,22 @@ export default function Home() {
       {/* Why Dubai */}
       <section
         id="why-dubai"
-        className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[var(--section-bg)]"
+        className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-section-bg"
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] px-4 sm:px-0">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary px-4 sm:px-0">
               Why Choose Dubai as Your Study–Work–Live Destination?
             </h2>
-            <div className="w-20 sm:w-24 h-1 bg-[var(--primary-red)] mx-auto"></div>
+            <div className="w-20 sm:w-24 h-1 bg-primary-red mx-auto"></div>
           </div>
 
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-10 lg:mb-12">
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm text-center space-y-3 sm:space-y-4">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--primary-red)]">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-red">
                 A Global Tourism Capital
               </div>
-              <p className="text-sm sm:text-base text-[var(--text-secondary)]">
+              <p className="text-sm sm:text-base text-text-secondary">
                 Dubai welcomes millions of visitors annually and is home to
                 hundreds of luxury hotels, award-winning restaurants, and global
                 hospitality brands.
@@ -609,30 +569,30 @@ export default function Home() {
             </div>
 
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm text-center space-y-3 sm:space-y-4">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--primary-red)]">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-red">
                 Career Opportunities Everywhere
               </div>
-              <p className="text-sm sm:text-base text-[var(--text-secondary)]">
+              <p className="text-sm sm:text-base text-text-secondary">
                 5-star hotels, international brands, world-class restaurants,
                 mega events, tourism companies, and startup opportunities.
               </p>
             </div>
 
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm text-center space-y-3 sm:space-y-4">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--primary-red)]">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-red">
                 Safe, Modern, and Multicultural
               </div>
-              <p className="text-sm sm:text-base text-[var(--text-secondary)]">
+              <p className="text-sm sm:text-base text-text-secondary">
                 With over 200 nationalities, Dubai is one of the safest and most
                 international cities in the world.
               </p>
             </div>
 
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm text-center space-y-3 sm:space-y-4">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--primary-red)]">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-red">
                 Future-Ready Lifestyle
               </div>
-              <p className="text-sm sm:text-base text-[var(--text-secondary)]">
+              <p className="text-sm sm:text-base text-text-secondary">
                 Safe and secured city, high-tech infrastructure, excellent
                 quality of life, competitive work opportunities, and a
                 fast-growing professional landscape.
@@ -658,11 +618,11 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] px-4 sm:px-0">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary px-4 sm:px-0">
               Why Study Hospitality Management & Culinary Arts?
             </h2>
-            <div className="w-20 sm:w-24 h-1 bg-[var(--primary-red)] mx-auto"></div>
-            <p className="text-base sm:text-lg lg:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto px-4 sm:px-0">
+            <div className="w-20 sm:w-24 h-1 bg-primary-red mx-auto"></div>
+            <p className="text-base sm:text-lg lg:text-xl text-text-secondary max-w-3xl mx-auto px-4 sm:px-0">
               Studying Hospitality Management and Culinary Arts offers a unique
               combination of skills, blending business acumen, customer service,
               and culinary creativity.
@@ -681,10 +641,10 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-4 sm:space-y-6">
-                <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
+                <h3 className="text-2xl sm:text-3xl font-bold text-text-primary">
                   Global Career Opportunities
                 </h3>
-                <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
                   Graduates have access to a wide range of careers worldwide:
                   Hotels, Resorts, Cruise Lines, Fine Dining & F&B Operations,
                   Event Management & Catering. The global culinary market was
@@ -697,17 +657,17 @@ export default function Home() {
             {/* Transferable Skills */}
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
               <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
-                <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
+                <h3 className="text-2xl sm:text-3xl font-bold text-text-primary">
                   Transferable Skills
                 </h3>
-                <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
                   A combination of hospitality management and culinary arts
                   provides a versatile skill set: Leadership & Team Management,
                   Creative & Critical Thinking, Customer Service &
                   Communication, Business & Financial Acumen, Problem Solving &
                   Adaptability, and Tech & Innovation.
                 </p>
-                <p className="text-[var(--text-light)] italic">
+                <p className="text-text-light italic">
                   A 2023 Cornell University study found that 90% of hospitality
                   and culinary graduates reported that their skills were
                   applicable in diverse industries.
@@ -734,16 +694,16 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-4 sm:space-y-6">
-                <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
+                <h3 className="text-2xl sm:text-3xl font-bold text-text-primary">
                   Entrepreneurship Opportunities
                 </h3>
-                <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
                   Graduates are uniquely equipped to launch their own
                   businesses: Restaurants, Cafes, Catering Ventures, Boutique
                   Hotels & Culinary Lodges, Franchise Ownership, and Food
                   Innovation & Specialty Products.
                 </p>
-                <p className="text-[var(--text-light)] italic">
+                <p className="text-text-light italic">
                   According to Hospitality Net (2023), entrepreneurship in
                   hospitality and culinary ventures is rapidly growing, with
                   boutique hotels and culinary startups seeing annual growth
@@ -755,14 +715,99 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Students Choose EHH */}
-      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[var(--section-bg)]">
+      {/* Director's Message */}
+      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
+              Director's Message
+            </h2>
+            <div className="w-20 sm:w-24 h-1 bg-primary-red mx-auto"></div>
+          </div>
+
+          <div className="bg-section-bg rounded-lg p-6 sm:p-8 lg:p-10 shadow-sm">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+              {/* Message Content */}
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-text-secondary leading-relaxed">
+                <p>
+                  <span className="font-semibold text-text-primary text-lg sm:text-xl">
+                    "Why do you need an education?"
+                  </span>
+                </p>
+                <p>
+                  We at EHH believe that the best long-term investment is the
+                  investment in your education in the field of your choice.
+                </p>
+                <p>
+                  For us at{" "}
+                  <span className="font-semibold text-primary-red">
+                    Ecole Hôtelière Helvétique
+                  </span>
+                  , Education without a "Well-defined" career pathway is an
+                  incomplete educational solution; EHH focuses on developing
+                  young responsible adults for a meaningful career which
+                  directly contributes to the sustainable global tourism
+                  industry.
+                </p>
+                <p>
+                  <span className="font-semibold text-text-primary">
+                    Our tagline "Real Learning for Real Careers"
+                  </span>
+                </p>
+                <p>
+                  At EHH, we offer the students a transformed way of learning
+                  where we integrate our business modules into the real world
+                  from day one. We are unique because our programs are
+                  innovative, hands-on, and forward-thinking, aligned with
+                  acquiring knowledge, mastering skills, and eventually taking
+                  the lead.
+                </p>
+                <p>
+                  Our graduates are one of the most sought-after young
+                  professionals; we aim to secure their internships and career
+                  opportunities and we plan to continue to open more career
+                  doors for young learners exposing them to the international
+                  arena across the Globe.
+                </p>
+                <p className="font-semibold text-text-primary">
+                  Are you ambitious and determined and ready for REAL WORLD,
+                  REAL CAREERS, we will be happy to hear from you and join you
+                  on the journey of TRANSFORMATION.
+                </p>
+              </div>
+
+              {/* Director Image and Name */}
+              <div className="space-y-6 order-first lg:order-last">
+                <div className="relative w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-lg bg-gray-100">
+                  <Image
+                    src="https://imagesplashh.vercel.app/api/image/600/800/ceo"
+                    alt="Valeriya Krupenya - Director"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="text-center lg:text-left">
+                  <p className="text-xl sm:text-2xl font-bold text-text-primary">
+                    Valeriya Krupenya
+                  </p>
+                  <p className="text-lg sm:text-xl font-semibold text-primary-red">
+                    Director
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Students Choose EHH */}
+      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-section-bg">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-12 lg:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
               Why Students Choose EHH
             </h2>
-            <div className="w-20 sm:w-24 h-1 bg-[var(--primary-red)] mx-auto"></div>
+            <div className="w-20 sm:w-24 h-1 bg-primary-red mx-auto"></div>
           </div>
 
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -776,9 +821,9 @@ export default function Home() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border-l-4 border-[var(--primary-red)]"
+                className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border-l-4 border-primary-red"
               >
-                <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
                   {item}
                 </p>
               </div>
@@ -790,7 +835,7 @@ export default function Home() {
       {/* Contact/CTA Section */}
       <section
         id="contact"
-        className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[var(--primary-red)]"
+        className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-primary-red"
       >
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
@@ -806,7 +851,7 @@ export default function Home() {
             own business, or exploring international opportunities."
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
-            <button className="bg-white text-[var(--primary-red)] px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-gray-100 transition-colors font-semibold text-base sm:text-lg">
+            <button className="bg-white text-primary-red px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-gray-100 transition-colors font-semibold text-base sm:text-lg">
               Get Started
             </button>
             <button className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-white/10 transition-colors font-semibold text-base sm:text-lg">
@@ -817,12 +862,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[var(--text-primary)] text-white py-10 sm:py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-text-primary text-white py-10 sm:py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-3 sm:mb-4">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[var(--primary-red)] rounded"></div>
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary-red rounded"></div>
                 <span className="text-lg sm:text-xl font-semibold">EHH</span>
               </div>
               <p className="text-sm sm:text-base text-gray-400">
@@ -865,10 +910,48 @@ export default function Home() {
               <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
                 Contact
               </h4>
-              <p className="text-sm sm:text-base text-gray-400">Dubai, UAE</p>
-              <p className="text-sm sm:text-base text-gray-400">
-                In Association with MAF Accor Hotels and Resorts
-              </p>
+              <div className="space-y-2 text-sm sm:text-base text-gray-400">
+                <p>Dubai, UAE</p>
+                <p>In Association with MAF Accor Hotels and Resorts</p>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
+                Get In Touch
+              </h4>
+              <div className="space-y-2 text-sm sm:text-base text-gray-400">
+                <p>
+                  <span className="font-semibold text-white">Email:</span>{" "}
+                  <a
+                    href="mailto:info@swissec.com"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    info@swissec.com
+                  </a>
+                </p>
+                <p>
+                  <span className="font-semibold text-white">WhatsApp:</span>{" "}
+                  <a
+                    href="https://wa.me/971501016067"
+                    className="text-gray-400 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +971 50 101 6067
+                  </a>
+                </p>
+                <p>
+                  <span className="font-semibold text-white">Website:</span>{" "}
+                  <a
+                    href="https://www.ehheducation.com"
+                    className="text-gray-400 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    www.ehheducation.com
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
           <div className="border-t border-gray-700 pt-6 sm:pt-8 text-center text-sm sm:text-base text-gray-400">
