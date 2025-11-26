@@ -425,7 +425,7 @@ export default function Home() {
             <div className="bg-section-bg rounded-xl overflow-hidden">
               <div className="relative h-72 lg:h-96">
                 <Image
-                  src="/prog1.jpg"
+                  src="/prog1.webp"
                   alt="Hospitality Business Program"
                   fill
                   className="object-cover"
@@ -478,7 +478,7 @@ export default function Home() {
             <div className="bg-section-bg rounded-xl overflow-hidden">
               <div className="relative h-72 lg:h-96">
                 <Image
-                  src="/prog2.png"
+                  src="/prog2.webp"
                   alt="Culinary Arts Program"
                   fill
                   className="object-cover"
