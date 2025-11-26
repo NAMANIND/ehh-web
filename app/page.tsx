@@ -19,6 +19,7 @@ import {
   Route,
   Plane,
   MessageCircle,
+  Link,
 } from "lucide-react";
 
 const heroSlides = [
@@ -1011,8 +1012,11 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
-                NAVIGATION
+              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 flex items-center">
+                <span className="w-8 h-8 bg-primary-red rounded-full flex items-center justify-center mr-2">
+                  <Link className="w-4 h-4 text-white" />
+                </span>
+                <span>Quick Links</span>
               </h4>
               <ul className="space-y-2 text-sm sm:text-base">
                 {navItems.map((item) => (
