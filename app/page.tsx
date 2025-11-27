@@ -119,7 +119,7 @@ export default function Home() {
                   src="/main-logo-new.png"
                   alt="EHH Logo"
                   fill
-                  className="object-contain"
+                  className="object-contain bg-white"
                 />
               </div>
             </div>
@@ -915,8 +915,8 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-white mb-3">ADDRESS</h3>
               <div className="text-white/90 text-sm sm:text-base space-y-1">
                 <p>
-                  Admin Office: Science Park - Al Barsha South ( By appointment
-                  only )
+                  Admin Office: Science Park - Al Barsha South ({" "}
+                  <span className="font-bold">By appointment only</span> )
                 </p>
                 <p>P.O.Box 345025</p>
                 <p>Dubai - United Arab Emirates</p>
@@ -1002,7 +1002,7 @@ export default function Home() {
                     src="/main-logo-new.png"
                     alt="EHH Logo"
                     fill
-                    className="object-contain"
+                    className="object-contain bg-white"
                   />
                 </div>
               </div>
